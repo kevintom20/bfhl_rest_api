@@ -5,9 +5,9 @@ def handler(event, context):
         if event['httpMethod'] == 'POST':
             data = json.loads(event['body'])
 
-            user_name = data.get('user_name', '').replace(' ', '_').lower()
-            dob = data.get('dob', '')  # In the format ddmmyyyy
-            user_id = f"{user_name}_{dob}"
+            user_name = "kevin"
+            dob = "20052003"  # In the format ddmmyyyy
+            user_id = "kevin_2005003"
 
             numbers = [int(i) for i in data.get('data', []) if i.isdigit()]
             alphabets = [i for i in data.get('data', []) if i.isalpha()]
@@ -18,8 +18,8 @@ def handler(event, context):
             response = {
                 "is_success": True,
                 "user_id": user_id,
-                "email": data.get('email'),
-                "roll_number": data.get('roll_number'),
+                "email"::"kevin20tom@gmail.com",
+                "roll_number":"21BCE0465,
                 "numbers": numbers,
                 "alphabets": alphabets,
                 "highest_lowercase": highest_lowercase
